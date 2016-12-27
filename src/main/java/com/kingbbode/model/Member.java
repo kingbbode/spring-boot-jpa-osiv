@@ -18,4 +18,8 @@ public class Member {
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "fk_member_team"))
     private Team team;
+
+    public void moveTeam(Team team){
+        this.team = team;
+    }
 }
