@@ -1,11 +1,10 @@
 package com.kingbbode.controller;
 
 import com.kingbbode.model.Team;
-import com.kingbbode.repository.MemberRepository;
-import com.kingbbode.repository.TeamRepository;
+import com.kingbbode.service.MemberService;
+import com.kingbbode.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,22 +19,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class OsivInController {
 
     @Autowired
-    private TeamRepository teamRepository;
+    private MemberService memberService;
 
     @Autowired
-    private MemberRepository memberRepository;
+    private TeamService teamService;
 
-    @Transactional
-    @PostMapping("/member/{userIdx}")
-    public String move(@PathVariable Long userIdx, Team team){
-        memberRepository.findOne(userIdx).moveTeam(team);
+    @PostMapping("/member/{memberIdx}")
+    public String move(@PathVariable Long memberIdx, Team team){
+        memberService.moveTeam(memberIdx, team);
         return "redirect:/";
     }
 
-    @Transactional
-    @GetMapping("/")
+    @GetMapping("")
     public String home(Model model){
-        model.addAttribute("teams", teamRepository.findAll());
+        model.addAttribute("teams", teamService.findAll());
         return "home";
     }
 }

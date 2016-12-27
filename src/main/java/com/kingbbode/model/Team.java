@@ -29,4 +29,12 @@ public class Team {
     public List<Member> getMembers() {
         return members;
     }
+
+    public Long getReverseIdx(){
+        return this.idx==1?2L:1;
+    }
+
+    public void setIdx(Long idx) {
+        this.idx = idx;
+    }
 }
