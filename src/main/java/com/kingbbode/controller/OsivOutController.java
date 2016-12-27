@@ -17,7 +17,6 @@ public class OsivOutController {
     @Autowired
     private TeamRepository teamRepository;
 
-
     @Autowired
     private MemberRepository memberRepository;
 

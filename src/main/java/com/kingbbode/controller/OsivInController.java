@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/in")
 public class OsivInController {
+
     @Autowired
     private TeamRepository teamRepository;
 

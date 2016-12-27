@@ -17,4 +17,16 @@ public class Team {
 
     @OneToMany(mappedBy="team")
     private List<Member> members;
+
+    public Long getIdx() {
+        return idx;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Member> getMembers() {
+        return members;
+    }
 }
