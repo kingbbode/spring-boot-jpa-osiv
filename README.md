@@ -1,7 +1,7 @@
 Kingbbode - Spring Boot Open Session In View Test Project
 =========================================================
 
-> JPA Open Session In In View Test
+> Spring Open Session In In View Test
 
 ---
 
