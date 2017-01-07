@@ -15,7 +15,7 @@ public class Team {
     @Column(nullable = false, length = 20)
     private String name;
 
-    @OneToMany(mappedBy="team")
+    @OneToMany(mappedBy="team", fetch = FetchType.LAZY)
     private List<Member> members;
 
     public Long getIdx() {
