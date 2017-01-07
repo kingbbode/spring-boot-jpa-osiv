@@ -23,10 +23,4 @@ public class OsivController {
         model.addAttribute("members", memberRepository.findAll());
         return "index";
     }
-
-    @GetMapping("/proxy/test")
-    public String test(Model model) {
-        model.addAttribute("members", memberRepository.findAll());
-        return "index";
-    }
 }
